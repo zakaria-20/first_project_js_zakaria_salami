@@ -228,20 +228,20 @@ const Withdrawmoney=(user)=>{
         alert("Insufficient balance");
     }
 }
-// const Depositmoney=(user)=>{
-//     let askAmount=prompt("Enter amount to deposit:");
-//     let amounts=Number(askAmount)
-//     let balance=user.balance;
-//     if (!isNaN(amounts)&& amounts<=1000) {
-//         // user.balance += amounts;
-//         user.balance=balance + amounts
-//         alert("Deposit successful. New balance: " + user.balance + " dirhams.");
-//         console.log("New balance:", user.balance);
-//     }else{
-//         alert("makhasekch tfuut 1000dh");
-//     }
+const Depositmoney=(user)=>{
+    let askAmount=prompt("Enter amount to deposit:");
+    let amounts=Number(askAmount)
+    let balance=user.balance;
+    if (!isNaN(amounts)&& amounts<=1000) {
+        // user.balance += amounts;
+        user.balance=balance + amounts
+        alert("Deposit successful. New balance: " + user.balance + " dirhams.");
+        console.log("New balance:", user.balance);
+    }else{
+        alert("makhasekch tfuut 1000dh");
+    }
 
-// }
+}
 
 
 choosing()
