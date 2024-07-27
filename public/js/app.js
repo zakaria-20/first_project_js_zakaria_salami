@@ -177,24 +177,24 @@ const login = () => {
         // signup()
     }
 };
-// const changepassword=()=>{
-//     let askEmail=prompt("Enter your email:");
-//     let existingUser = database.find(account => account.email === askEmail);
-//     if (existingUser) {
-//         let askPassword=prompt("Enter your password:");
-//         if (existingUser.password === askPassword) {
-//             let newpassword=prompt("Enter new password:");
-//             existingUser.password=newpassword
-//             alert("password changed");
-//             console.log("password jedid",newpassword);
-//             return
+const changepassword=()=>{
+    let askEmail=prompt("Enter your email:");
+    let existingUser = database.find(account => account.email === askEmail);
+    if (existingUser) {
+        let askPassword=prompt("Enter your password:");
+        if (existingUser.password === askPassword) {
+            let newpassword=prompt("Enter new password:");
+            existingUser.password=newpassword
+            alert(`password changed hahuwa password jdid ${newpassword}`);
+            console.log("password jedid",newpassword);
+            return
            
-//             }
-//     }else{
-//         alert("ra makaynch had email li dakhalty ")
-//     }
+            }
+    }else{
+        alert("ra makaynch had email li dakhalty ")
+    }
     
-// }
+}
 // const Withdrawmoney=(user)=>{
 //    let askAmount=prompt("Enter amount to withdraw:");
 //    let amounts=Number(askAmount)
