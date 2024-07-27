@@ -195,20 +195,20 @@ const changepassword=()=>{
     }
     
 }
-// const Withdrawmoney=(user)=>{
-//    let askAmount=prompt("Enter amount to withdraw:");
-//    let amounts=Number(askAmount)
-//    let balance=user.balance;
-//    if (!isNaN(amounts)<=balance) {
-//     user.balance=balance-amounts
-//     alert("Withdrawal successful");
-//     console.log("balance jedid",user.balance);
-//     alert(`ha chaal sehabet ${user.balance}`)
-//     return
-//     } else {
-//         alert("Insufficient balance");
-//     }
-// }
+const Withdrawmoney=(user)=>{
+   let askAmount=prompt("Enter amount to withdraw:");
+   let amounts=Number(askAmount)
+   let balance=user.balance;
+   if (!isNaN(amounts)<=balance) {
+    user.balance=balance-amounts
+    alert("Withdrawal successful");
+    console.log("balance jedid",user.balance);
+    alert(`ha chaal sehabet ${user.balance}`)
+    return
+    } else {
+        alert("Insufficient balance");
+    }
+}
 // const Depositmoney=(user)=>{
 //     let askAmount=prompt("Enter amount to deposit:");
 //     let amounts=Number(askAmount)
