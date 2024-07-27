@@ -1,5 +1,5 @@
 const database = [
-    { name: 'walid', userName: 'walid', email: 'walid@email.com', password: '123' },
+    { name: 'walid', userName: 'walid', email: 'walid@email.com', password: '123' ,balance: 1000},
 ];
 
 class Account {
@@ -8,23 +8,32 @@ class Account {
         this.email = email;
         this.age = age;
         this.password = password;
+        this.balance=balance
     }
 }
-// function Shoose() {
-//     let shoose=prompt("eneter:login-sing-up-changepassword")
-//     switch (!) {
-//         case "sign-up":
-//             signup()
-//             break;
-//         case "login":
-//             login()
-//         case "exit":
-//             return false
-//         default:
-//             break;
-//     }
-// }
-Shoose()
+
+const choosing = () => {
+    while (true) {
+        let choose = prompt("cheno bghiti diir: SignUp, LogIn, changepassword, exit");
+        switch (choose) {
+            case "signup":
+                signup();
+                break;
+            case "login":
+                login();
+                break;
+            case "changepassword":
+                changepassword();
+                break;
+            case "exit":
+                choosing()
+                
+            default:
+                alert("khetar chi haja rak makhetariti walo");
+        }
+    }
+};
+// 
 const validationNom = (fullname) => {
     let name = fullname.trim();
     let name2 = name.toLowerCase();
@@ -75,50 +84,53 @@ const validateEmail = (email) => {
     }
     return true;
   }
-//   const validateAge = (age) => {
-//     let validAge = /^[0-9]{1,2}$/;
-//     if (!validAge.test(age)) {
-//         alert("ra fih espace ou fih 3 ar9am ou machi ra9em");
-//         return false;
-//     }
-//     return true;
-// };
+  const validateAge = (age) => {
+    let validAge = /^[0-9]{1,2}$/;
+    if (!validAge.test(age)) {
+        alert("ra fih espace ou fih 3 ar9am ou machi ra9em");
+        return false;
+    }
+    return true;
+};
 
-// const validatePassword = (password) => {
+const validatePassword = (password) => {
    
-//     const validPassword = ["@", "#", "-", "+", "*", "/"];
+    const validPassword = ["@", "#", "-", "+", "*", "/"];
     
     
-//     if (password.length < 7) {
-//         alert("khaso ikuun ketar mn 3.");
-//         return false;
-//     }
+    if (password.length < 7) {
+        alert("khaso ikuun ketar mn 3.");
+        return false;
+    }
 
     
-//     if (password.includes(" ")) {
-//         alert("fih les espace.");
-//         return false;
-//     }
+    if (password.includes(" ")) {
+        alert("fih les espace.");
+        return false;
+    }
 
     
-//     const Specialcaracter = validPassword.some(ele => password.includes(ele));
-//     if (!Specialcaracter) {
-//         alert("khas ikuun fih wahed mn hado: @, #, -, +, *, /.");
-//         return false;
-//     }
+    const Specialcaracter = validPassword.some(ele => password.includes(ele));
+    if (!Specialcaracter) {
+        alert("khas ikuun fih wahed mn hado: @, #, -, +, *, /.");
+        return false;
+    }
 
 
-//     return true;
+    return true;
 
-// };
-// const confirmPassword = (password, confirmPassword) => {
-//     // return password === confirmPassword;
-//     if (password!==confirmPassword) {
-//         alert("rah machi behal password")
-//         return false
-//     }
-//     return true
-// };
+};
+const confirmPassword = (password, confirmPassword) => {
+    // return password === confirmPassword;
+    i=0
+    if (password!==confirmPassword && i<2) {
+        i++
+        alert("rah machi behal password")
+        return false
+        
+    }
+    return true
+};
 // const signup = () => {
 //     let askFullname = prompt("Enter full name:");
 //     while (!validationNom(askFullname)) {
@@ -142,11 +154,75 @@ const validateEmail = (email) => {
 //         confirmpassword=prompt("confirm password")
 //     }
 //     alert("Registration completed successfully")
-//     let account = new Account(askFullname, askEmail, askAge, askPassword);
+//     let account = new Account(askFullname, askEmail, askAge, askPassword,2000);
 //     database.push(account);
 //     console.log("Account created:", account);
 // };
-// const login=()=>{
+
+// const login = () => {
+//     let askEmail = prompt("Enter your email:");
+//     let existingUser = database.find(account => account.email === askEmail);
+
+//     if (existingUser) {
+//         let askPassword = prompt("Enter your password:");
+//         if (existingUser.password === askPassword) {
+//             alert("Login successful!");
+//             shoosingoption(existingUser)
+//             // Add any other actions upon successful login here
+//         } else {
+//             alert("Incorrect password");
+//         }
+//     } else {
+//         alert("ra makaynch had email li dakhalty , diir signup ");
+//         // signup()
+//     }
+// };
+// const changepassword=()=>{
+//     let askEmail=prompt("Enter your email:");
+//     let existingUser = database.find(account => account.email === askEmail);
+//     if (existingUser) {
+//         let askPassword=prompt("Enter your password:");
+//         if (existingUser.password === askPassword) {
+//             let newpassword=prompt("Enter new password:");
+//             existingUser.password=newpassword
+//             alert("password changed");
+//             console.log("password jedid",newpassword);
+//             return
+           
+//             }
+//     }else{
+//         alert("ra makaynch had email li dakhalty ")
+//     }
+    
+// }
+// const Withdrawmoney=(user)=>{
+//    let askAmount=prompt("Enter amount to withdraw:");
+//    let amounts=Number(askAmount)
+//    let balance=user.balance;
+//    if (!isNaN(amounts)<=balance) {
+//     user.balance=balance-amounts
+//     alert("Withdrawal successful");
+//     console.log("balance jedid",user.balance);
+//     alert(`ha chaal sehabet ${user.balance}`)
+//     return
+//     } else {
+//         alert("Insufficient balance");
+//     }
+// }
+// const Depositmoney=(user)=>{
+//     let askAmount=prompt("Enter amount to deposit:");
+//     let amounts=Number(askAmount)
+//     let balance=user.balance;
+//     if (!isNaN(amounts)&& amounts<=1000) {
+//         // user.balance += amounts;
+//         user.balance=balance + amounts
+//         alert("Deposit successful. New balance: " + user.balance + " dirhams.");
+//         console.log("New balance:", user.balance);
+//     }else{
+//         alert("makhasekch tfuut 1000dh");
+//     }
 
 // }
-signup();
+
+
+choosing()
