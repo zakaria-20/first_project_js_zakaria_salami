@@ -131,33 +131,33 @@ const confirmPassword = (password, confirmPassword) => {
     }
     return true
 };
-// const signup = () => {
-//     let askFullname = prompt("Enter full name:");
-//     while (!validationNom(askFullname)) {
-//          askFullname=prompt("Enter full name:");
-//     }
-//     askFullname=validationNom(askFullname);
-//     let askEmail = prompt("Enter email:");
-//     while (!validateEmail(askEmail)) {
-//         askEmail=prompt("Enter full email:");
-//     }
-//     let askAge = prompt("Enter age:");
-//     while (!validateAge(askAge)) {
-//         askAge=prompt("Enter age:");
-//     }
-//     let askPassword = prompt("Enter password:");
-//     while (!validatePassword(askPassword)) {
-//         askPassword = prompt("Enter password:");
-//     }
-//     let confirmpassword=prompt("confirm password")
-//     while (!confirmPassword(askPassword,confirmpassword)) {
-//         confirmpassword=prompt("confirm password")
-//     }
-//     alert("Registration completed successfully")
-//     let account = new Account(askFullname, askEmail, askAge, askPassword,2000);
-//     database.push(account);
-//     console.log("Account created:", account);
-// };
+const signup = () => {
+    let askFullname = prompt("Enter full name:");
+    while (!validationNom(askFullname)) {
+         askFullname=prompt("Enter full name:");
+    }
+    askFullname=validationNom(askFullname);
+    let askEmail = prompt("Enter email:");
+    while (!validateEmail(askEmail)) {
+        askEmail=prompt("Enter full email:");
+    }
+    let askAge = prompt("Enter age:");
+    while (!validateAge(askAge)) {
+        askAge=prompt("Enter age:");
+    }
+    let askPassword = prompt("Enter password:");
+    while (!validatePassword(askPassword)) {
+        askPassword = prompt("Enter password:");
+    }
+    let confirmpassword=prompt("confirm password")
+    while (!confirmPassword(askPassword,confirmpassword)) {
+        confirmpassword=prompt("confirm password")
+    }
+    alert("Registration completed successfully")
+    let account = new Account(askFullname, askEmail, askAge, askPassword,2000);
+    database.push(account);
+    console.log("Account created:", account);
+};
 
 // const login = () => {
 //     let askEmail = prompt("Enter your email:");
