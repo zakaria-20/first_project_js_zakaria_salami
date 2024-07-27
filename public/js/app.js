@@ -159,24 +159,24 @@ const signup = () => {
     console.log("Account created:", account);
 };
 
-// const login = () => {
-//     let askEmail = prompt("Enter your email:");
-//     let existingUser = database.find(account => account.email === askEmail);
+const login = () => {
+    let askEmail = prompt("Enter your email:");
+    let existingUser = database.find(account => account.email === askEmail);
 
-//     if (existingUser) {
-//         let askPassword = prompt("Enter your password:");
-//         if (existingUser.password === askPassword) {
-//             alert("Login successful!");
-//             shoosingoption(existingUser)
-//             // Add any other actions upon successful login here
-//         } else {
-//             alert("Incorrect password");
-//         }
-//     } else {
-//         alert("ra makaynch had email li dakhalty , diir signup ");
-//         // signup()
-//     }
-// };
+    if (existingUser) {
+        let askPassword = prompt("Enter your password:");
+        if (existingUser.password === askPassword) {
+            alert("Login successful!");
+            shoosingoption(existingUser)
+            // Add any other actions upon successful login here
+        } else {
+            alert("Incorrect password");
+        }
+    } else {
+        alert("ra makaynch had email li dakhalty , diir signup ");
+        // signup()
+    }
+};
 // const changepassword=()=>{
 //     let askEmail=prompt("Enter your email:");
 //     let existingUser = database.find(account => account.email === askEmail);
