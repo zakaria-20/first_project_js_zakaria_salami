@@ -14,7 +14,7 @@ class Account {
 
 const choosing = () => {
     while (true) {
-        let choose = prompt("cheno bghiti diir: SignUp, LogIn, changepassword, exit");
+        let choose = prompt("cheno bghiti diir: signup, login, changepassword, exit");
         switch (choose) {
             case "signup":
                 signup();
@@ -33,7 +33,26 @@ const choosing = () => {
         }
     }
 };
-// 
+const shoosingoption=(account)=>{
+    while (true) {
+        alert(`welcome ${account.userName} ha chaal eando fl banka ${account.balance}`)
+        let action = prompt("Choose an action: logout,withdraw,deposit");
+        switch (action.toLowerCase()) {
+            case "logout":
+                alert("Logged out.");
+                choosing();
+                return;
+            case "withdraw":
+                Withdrawmoney(account)
+                break;
+            case "deposit":
+                Depositmoney(account)
+                break;
+            default:
+                alert("Invalid option, please choose again.");
+        }
+    }
+}
 const validationNom = (fullname) => {
     let name = fullname.trim();
     let name2 = name.toLowerCase();
